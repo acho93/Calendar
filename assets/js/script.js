@@ -4,10 +4,110 @@ $(document).ready(function() {
   var todayDate = moment().format('dddd, MMMM Do YYYY');
       dateParagraph.text(todayDate);
 });
-  
-  //saves user input for each time slot
 
-  var input_textarea1 = document.querySelector('#event1');
+//button to clear local storage and refresh the page
+$("#clear").click(function() {
+  localStorage.clear();
+  location.reload()
+});
+
+//adds colors to show past, present, future events
+var now = new Date().getHours();
+
+
+  if (now > 9) {
+    $("#event1").addClass("past");
+  } 
+  else if (now >= 9 && now < 10) {
+    $("#event1").addClass("present");
+  } 
+  else if (now < 9) {
+    $("#event1").addClass("future");
+  }
+
+  if (now > 10) {
+    $("#event2").addClass("past");
+  } 
+  else if (now >= 10 && now < 11) {
+    $("#event2").addClass("present");
+  } 
+  else if (now < 10) {
+    $("#event2").addClass("future");
+  }
+
+  if (now > 11) {
+    $("#event3").addClass("past");
+  } 
+  else if (now >= 11 && now < 12) {
+    $("#event3").addClass("present");
+  } 
+  else if (now < 11) {
+    $("#event3").addClass("future");
+  }
+
+  if (now > 12) {
+    $("#event4").addClass("past");
+  } 
+  else if (now >= 12 && now < 13) {
+    $("#event4").addClass("present");
+  } 
+  else if (now < 12) {
+    $("#event4").addClass("future");
+  }
+
+  if (now > 13) {
+    $("#event5").addClass("past");
+  } 
+  else if (now >= 13 && now < 14) {
+    $("#event5").addClass("present");
+  } 
+  else if (now < 13) {
+    $("#event5").addClass("future");
+  }
+
+  if (now > 14) {
+    $("#event6").addClass("past");
+  } 
+  else if (now >= 14 && now < 15) {
+    $("#event6").addClass("present");
+  } 
+  else if (now < 14) {
+    $("#event6").addClass("future");
+  }
+
+  if (now > 15) {
+    $("#event7").addClass("past");
+  } 
+  else if (now >= 15 && now < 16) {
+    $("#event7").addClass("present");
+  } 
+  else if (now < 15) {
+    $("#event7").addClass("future");
+  }
+
+  if (now > 16) {
+    $("#event8").addClass("past");
+  } 
+  else if (now >= 16 && now < 17) {
+    $("#event8").addClass("present");
+  } 
+  else if (now < 16) {
+    $("#event8").addClass("future");
+  }
+
+  if (now > 17) {
+    $("#event9").addClass("past");
+  } 
+  else if (now >= 17 && now < 18) {
+    $("#event9").addClass("present");
+  } 
+  else if (now < 17) {
+    $("#event9").addClass("future");
+  }
+
+
+//saves user input for each time slot
+var input_textarea1 = document.querySelector('#event1');
   var save_button1 = document.querySelector('#saveEvent1');
   //retrieves previously saved text
   input_textarea1.value = localStorage.getItem('content1');
@@ -105,102 +205,3 @@ $(document).ready(function() {
   function updateOutput9() {
       localStorage.setItem('content9', input_textarea9.value);
   };
-  
-  //add colors to show past, present, future events
-  var now= new Date().getHours();
-  
-  if (now > 9) {
-      $("#event1").addClass("past");
-      }	
-      else if (now >= 9 && now < 10) {
-          $("#event1").addClass("present");
-      }
-      else if (now < 9) {
-          $("#event1").addClass("future");
-      }
-  
-  if (now > 10) {
-      $("#event2").addClass("past");
-      }
-      else if (now >= 10 && now < 11) {
-          $("#event2").addClass("present");
-      }
-      else if (now < 10) {
-          $("#event2").addClass("future");
-      }
-  
-  if (now > 11) {
-      $("#event3").addClass("past");
-      }
-      else if (now >= 11 && now < 12) {
-          $("#event3").addClass("present");
-      }
-      else if (now < 11) {
-          $("#event3").addClass("future");
-      }
-  
-  if (now > 12) {
-      $("#event4").addClass("past");
-      }
-      else if (now >= 12 && now < 13) {
-          $("#event4").addClass("present");
-      }
-      else if (now < 12) {
-          $("#event4").addClass("future");
-      }
-  
-  if (now > 13) {
-      $("#event5").addClass("past");
-      }
-      else if (now >= 13 && now < 14) {
-          $("#event5").addClass("present");
-      }
-      else if (now < 13) {
-          $("#event5").addClass("future");
-      }
-  
-  if (now > 14) {
-      $("#event6").addClass("past");
-      }
-      else if (now >= 14 && now < 15) {
-          $("#event6").addClass("present");
-      }
-      else if (now < 14) {
-          $("#event6").addClass("future");
-      }
-  
-  if (now > 15) {
-      $("#event7").addClass("past");
-      }
-      else if (now >= 15 && now < 16) {
-          $("#event7").addClass("present");
-      }
-      else if (now < 15) {
-          $("#event7").addClass("future");
-      }
-  
-  if (now > 16) {
-      $("#event8").addClass("past");
-      }
-      else if (now >= 16 && now < 17) {
-          $("#event8").addClass("present");
-      }
-      else if (now < 16) {
-          $("#event8").addClass("future");
-      }
-  
-  if (now > 17) {
-      $("#event9").addClass("past");
-      }
-      else if (now >= 17 && now < 18) {
-          $("#event9").addClass("present");
-      }
-      else if (now < 17) {
-          $("#event9").addClass("future");
-      }
-
-$("#clear").click(function() {
-  localStorage.clear();
-  location.reload()
-
-});
